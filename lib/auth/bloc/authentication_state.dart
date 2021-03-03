@@ -1,0 +1,25 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter_counter/auth/model/user_model.dart';
+import 'package:flutter_counter/auth/repository/authentication_repository.dart';
+
+class AuthenticationState extends Equatable{
+
+  final AuthenticationStatus status;
+  final User user;
+
+  const AuthenticationState._({
+    this.status = AuthenticationStatus.unknown,
+    this.user = User.empty
+  });
+
+  const AuthenticationState.unkown() : this._();
+
+  const AuthenticationState.authenticated(User user)
+    : this._(status : AuthenticationStatus.authenticated,user : user);
+
+  const AuthenticationState.unauthenticated()
+    : this._(status : AuthenticationStatus.unauthenticated);
+
+  @override
+  List<Object> get props => [status, user];
+}
