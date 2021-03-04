@@ -34,7 +34,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent,AuthenticationState>{
     if(event is AuthenticationStatusChanged){
       yield await mapAuthenticationStatusChangedToState(event);
     }else if(event is AuthenticationLogoutRequested){
-      _authenticationRepository.logOut()
+      _authenticationRepository.logOut();
     }
   }
 

@@ -5,6 +5,7 @@ import 'package:flutter_counter/auth/bloc/authentication_bloc.dart';
 import 'package:flutter_counter/auth/bloc/authentication_state.dart';
 import 'package:flutter_counter/auth/repository/authentication_repository.dart';
 import 'package:flutter_counter/auth/repository/user_repository.dart';
+import 'package:flutter_counter/splach/presentation/splash.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -50,10 +51,10 @@ class AppViewState extends State<AppView>{
           listener : (context,state){
               switch(state.status){
                 case AuthenticationStatus.authenticated:
-                  navigator.pushAndRemoveUntil(Homepage.route(), (route) => false);
+                  //navigator.pushAndRemoveUntil(Homepage.route(), (route) => false);
                   break;
                 case AuthenticationStatus.unauthenticated :
-                  navigator.pushAndRemoveUntil(LoginPage.route(), (route) => false);
+                  //navigator.pushAndRemoveUntil(LoginPage.route(), (route) => false);
                   break;
                 default :
                   break;
